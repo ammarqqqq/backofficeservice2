@@ -3,7 +3,7 @@ const jwt = require('jwt-simple');
 const Config = require('./config'),
       config = new Config();
 const redisClient = require('redis').createClient;
-const serviceLookupHandler = require("./consulLookup.js");
+//const serviceLookupHandler = require("./consulLookup.js");
 
 
 var userhandler = (function() {
@@ -49,13 +49,14 @@ var userhandler = (function() {
                 var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
                 utc.setMinutes(utc.getMinutes() + config.tokenExpiryMinutes);
 
-                serviceLookupHandler.serviceLookup("backofficetokenredis", '').then(serverAddress => {
-                  var backofficetokenredis = redisClient(serverAddress.port, serverAddress.address);
+              //  serviceLookupHandler.serviceLookup("microservices_backofficetokenredis", '').then(serverAddress => {
+                  //var backofficetokenredis = redisClient(serverAddress.port, serverAddress.address);
+                  var backofficetokenredis = redisClient(6379, 'backofficetokenredis');
                   backofficetokenredis.set(user._id.toString(), utc.getTime());
                   resolve({success: true, token: token, userid: user._id, msg:"User authenticated"});
-                }).catch(error => {
+              /*  }).catch(error => {
                   throw "Could not look up service " + error;
-                });
+                });*/
               }
             });
           }

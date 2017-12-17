@@ -10,7 +10,7 @@ const User = require('./models/user');
 
 
 const redisClient = require('redis').createClient;
-const serviceLookupHandler = require("./consulLookup.js");
+//const serviceLookupHandler = require("./consulLookup.js");
 
 
 router.get('/', function (req, res) {

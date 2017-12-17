@@ -3,7 +3,7 @@ module.exports = function(){
         case 'test':
             return {
               'secret': '04050405',
-              'database': 'mongodb://localhost:27017/backoffice_integration_test',
+              'database': 'mongodb://localhost:27018/backoffice_integration_test',
               'logsDirectory': 'logs',
               'tokenExpiryMinutes' : 10,
               'serviceName': 'backofficeservice'
@@ -11,7 +11,7 @@ module.exports = function(){
         default:
             return {
               'secret': '04050405',
-              'database': 'mongodb://backofficemongo:27017/backofficeuser',
+              'database': 'mongodb://microservices_backofficemongo:27018/backofficeuser',
               'logsDirectory': 'logs',
               'tokenExpiryMinutes' : 1,
               'serviceName': 'backofficeservice'

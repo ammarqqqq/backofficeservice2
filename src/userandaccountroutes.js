@@ -19,7 +19,7 @@ logger.debug("listallusers", req.body);
     userhandler.hasAccess("admin", token).then(response => {
       //serviceLookupHandler.serviceLookup("userandaccountservice-8080", 'backofficeroutes/listallusers').then(serverAddress => {
         request({
-          url: 'https://' + server + '/userandaccountservice-8040', //URL to hit
+          url: 'https://' + server + '/microservices_userandaccountservice', //URL to hit
           //url: "https://" + serverAddress.address + ":" + serverAddress.port + "/" + serverAddress.routePath,
           qs: {time: +new Date()},
           method: "GET",
@@ -68,7 +68,7 @@ userhandler.getToken(req.headers).then(token => {
   userhandler.hasAccess("admin", token).then(response => {
     //serviceLookupHandler.serviceLookup("userandaccountservice-8080", 'backofficeroutes/deleteuser/'+req.params.userid).then(serverAddress => {
       request({
-        url: 'https://' + server + '/userandaccountservice', //URL to hit
+        url: 'https://' + server + '/microservices_userandaccountservice', //URL to hit
         //url: "https://" + serverAddress.address + ":" + serverAddress.port + "/" + serverAddress.routePath,
         qs: {time: +new Date()},
         method: "POST",

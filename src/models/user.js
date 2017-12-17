@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
 mongoose.Promise = global.Promise;
-const serviceLookupHandler = require("../consulLookup.js");
+//const serviceLookupHandler = require("../consulLookup.js");
 
 var changes = []
 
