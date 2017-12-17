@@ -6,7 +6,7 @@ module.exports = function(){
               'database': 'mongodb://localhost:27018/backoffice_integration_test',
               'logsDirectory': 'logs',
               'tokenExpiryMinutes' : 10,
-              'serviceName': 'backofficeservice'
+              'serviceName': 'microservices_backofficeservice'
             };
         default:
             return {
@@ -14,7 +14,7 @@ module.exports = function(){
               'database': 'mongodb://microservices_backofficemongo:27018/backofficeuser',
               'logsDirectory': 'logs',
               'tokenExpiryMinutes' : 1,
-              'serviceName': 'backofficeservice'
+              'serviceName': 'microservices_backofficeservice'
             };
     }
 };
